@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const session = require('express-session');
+const hash = require('pbkdf2-password')();
 
 var indexRouter = require('./routes/index');
 var logInRouter = require('./routes/login');
@@ -42,6 +43,11 @@ app.use('/', indexRouter);
 app.use('/login', logInRouter);
 app.use('/profile', restrict, profileRouter);
 app.use('/users', usersRouter);
+app.get('/logout', function (req, res) {
+  req.session.destroy(function () {
+    res.redirect('/');
+  })
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

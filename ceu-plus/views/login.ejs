@@ -1,18 +1,14 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <!--AÑADIR HEADER TEMPLATE-->
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-  <%- messages %>
-  <div class="form">
-    <form class="login-form" method="post" action='/login'>
-      <input name="username" type="text" placeholder="username"/>
-      <input name="password" type="password" placeholder="password"/>
-      <button type="submit">Log In</button>
-    </form>
-  </div>
-  </body>
-</html>
+<!--AÑADIR HEADER TEMPLATE-->
+<title><%= title %></title>
+<body>
+<h1><%= title %></h1>
+<%- messages %>
+<div class="form">
+  <form class="login-form" method="post" action='/login'>
+    <input name="username" type="text" placeholder="username"/>
+    <input name="password" type="password" placeholder="password"/>
+    <button type="submit">Log In</button>
+  </form>
+</div>
+</body>
+

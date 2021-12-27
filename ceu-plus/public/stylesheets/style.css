@@ -1,8 +1,44 @@
 body {
-  padding: 50px;
+  padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: black;
+  position: sticky;
+  top: 0;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 12px 12px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.right{
+  float:right;
+}
+
+.topnav img {
+  float:left;
+  height: 50px;
+}
+
+.righttopnav{
+  float: right;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 2px 2px;
+  text-decoration: none;
+  font-weight: bold;
 }

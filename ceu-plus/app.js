@@ -8,6 +8,7 @@ const hash = require('pbkdf2-password')();
 
 var indexRouter = require('./routes/index');
 var logInRouter = require('./routes/login');
+var registerRouter = require('./routes/register');
 var profileRouter = require('./routes/profile');
 var usersRouter = require('./routes/users');
 
@@ -41,6 +42,7 @@ app.use(function (req, res, next) {
 
 app.use('/', indexRouter);
 app.use('/login', logInRouter);
+app.use('/register', registerRouter);
 app.use('/profile', restrict, profileRouter);
 app.use('/users', usersRouter);
 app.get('/logout', function (req, res) {

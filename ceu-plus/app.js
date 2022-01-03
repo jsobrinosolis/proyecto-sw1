@@ -11,6 +11,7 @@ var registerRouter = require('./routes/register');
 var profileRouter = require('./routes/profile');
 var usersRouter = require('./routes/users');
 var cafeteriaRouter = require('./routes/cafeteria');
+var actualidadRouter = require('./routes/actualidad');
 
 var app = express();
 
@@ -45,6 +46,7 @@ app.use('/register', registerRouter);
 app.use('/profile', restrict, profileRouter);
 app.use('/users', usersRouter);
 app.use('/cafeteria', cafeteriaRouter);
+app.use('/actualidad', actualidadRouter);
 app.get('/logout', function (req, res) {
   req.session.destroy(function () {
     res.redirect('/');

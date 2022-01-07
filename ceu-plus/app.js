@@ -71,6 +71,9 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+var db = require("./models");
+db.sequelize.sync();
+
 function restrict(req, res, next){
   if(req.session.user){
     next();

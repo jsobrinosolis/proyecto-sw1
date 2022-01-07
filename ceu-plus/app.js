@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const session = require('express-session');
 const hash = require('pbkdf2-password')();
+const sequelize = require('./models/user');
 
 var indexRouter = require('./routes/index');
 var registerRouter = require('./routes/register');
@@ -70,9 +71,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-var db = require("./models");
-db.sequelize.sync();
 
 function restrict(req, res, next){
   if(req.session.user){

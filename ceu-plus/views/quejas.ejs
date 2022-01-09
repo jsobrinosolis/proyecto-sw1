@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<%- include('header')%>
+<body>
+    <%- include('menu-nav')%>
+    </br></br></br>
+    <h1>CEU QUEJAS</h1>
+    </br>
+    <form method="post" class="contact-form" id="contactForm">
+        <input type="text" name="name" id="name" placeholder="Nombre" required>
+        <input type="email" name="email" id="email" placeholder="E-mail" required>
+        <textarea name="message" id="message" cols="30" rows="10" placeholder="Mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+        </br>
+        </br>
+        <p>Para acceder al chat porfavor haz click <a href="#" onClick="window.open('chat','Chat','resizable,height=750,width=400'); return false;">aquí</a></p>
+    </form>
+</body>
+</html>
+

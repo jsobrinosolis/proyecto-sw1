@@ -15,6 +15,7 @@ var cafeteriaRouter = require('./routes/cafeteria');
 var actualidadRouter = require('./routes/actualidad');
 var deportesRouter = require('./routes/deportes');
 var chatRouter = require('./routes/chat');
+var quejasRouter = require('./routes/quejas');
 
 var app = express();
 
@@ -52,6 +53,7 @@ app.use('/cafeteria', cafeteriaRouter);
 app.use('/deportes' , deportesRouter);
 app.use('/actualidad', actualidadRouter);
 app.use('/chat', chatRouter);
+app.use('/quejas', quejasRouter);
 app.get('/logout', function (req, res) {
   req.session.destroy(function () {
     res.redirect('/');

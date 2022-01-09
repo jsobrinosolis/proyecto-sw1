@@ -36,7 +36,7 @@ io.on('connection', (socket) => {
     io.emit('chat message', socket.username + ': ' + msg);
   })
   socket.on('disconnect', () => {
-    io.emit('is_online', '🔴 ' + socket.username + ' se ha unido al chat...');
+    io.emit('is_online', '🔴 ' + socket.username + ' se ha desconectado del chat...');
     console.log("Usuario desconectado");
   })
   socket.on('username', (username) => {

@@ -72,6 +72,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+
 function restrict(req, res, next){
   if(req.session.user){
     next();

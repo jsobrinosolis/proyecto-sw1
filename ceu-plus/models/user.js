@@ -1,4 +1,5 @@
 const { Sequelize, DataTypes } = require('sequelize');
+
 const sequelize = new Sequelize('postgresql://postgres:qwerty@localhost:5432/ceu-plus');
 
 //testing connection
@@ -12,6 +13,7 @@ async function checkConnection() {
 }
 
 checkConnection();
+
 
 const User = sequelize.define('User', {
     // Model attributes are defined here
@@ -29,7 +31,8 @@ const User = sequelize.define('User', {
     },
     username: {
         type: DataTypes.STRING,
-        unique: true
+        unique: true,
+        allowNull: false
     },
     grado: {
         type: DataTypes.STRING,
@@ -49,3 +52,5 @@ const User = sequelize.define('User', {
 });
 
 sequelize.sync();
+
+module.exports = User;

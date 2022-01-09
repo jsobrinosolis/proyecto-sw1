@@ -36,7 +36,6 @@ const users = {
 };
 
 hash({password: 'admin'}, function(err, pass, salt, hash){
-    console.log("Hashing");
     if(err) throw err;
     users.admin.salt = salt;
     users.admin.hash = hash;

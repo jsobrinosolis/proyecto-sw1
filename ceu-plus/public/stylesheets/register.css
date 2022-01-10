@@ -1,6 +1,6 @@
 #success_message{ display: none;}
 
-#message {
+#messagePSW {
     display:none;
     background: #f1f1f1;
     color: #000;
@@ -9,7 +9,7 @@
     margin-top: 10px;
 }
 
-#message p {
+#messagePSW p {
     padding: 10px 35px;
     font-size: 18px;
 }

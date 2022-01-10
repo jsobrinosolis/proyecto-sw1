@@ -5,7 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const session = require('express-session');
 const hash = require('pbkdf2-password')();
-const sequelize = require('./models/user');
+const db = require("./models/index");
+
 
 var indexRouter = require('./routes/index');
 var registerRouter = require('./routes/register');
@@ -75,6 +76,21 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+//connection to db
+db.sequelize.sync();
+
+//checking db connection
+async function checkConnection() {
+  try {
+    await db.sequelize.authenticate();
+    console.log("Connection established successfully with DB");
+  } catch (e) {
+    console.error("Unable to connect to the database: ", e);
+  }
+}
+
+checkConnection();
 
 function restrict(req, res, next){
   if(req.session.user){

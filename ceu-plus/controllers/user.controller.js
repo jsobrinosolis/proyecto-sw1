@@ -5,7 +5,7 @@ const Op = db.Sequelize.Op;
 
 const saltRounds = 10;
 
-// Create and Save a new Tutorial
+// Create and Save a new User
 exports.create = (req, res) => {
     // Validate request
     if (!req.body.username) {
@@ -15,7 +15,7 @@ exports.create = (req, res) => {
         return;
     }
 
-    // Create a Tutorial
+    // Create a User
     const new_user = {
         firstName: req.body.nombre,
         lastName: req.body.apellido,
@@ -26,15 +26,34 @@ exports.create = (req, res) => {
         password: bcrypt.hashSync(req.body.psw, saltRounds)
     };
 
-    // Save Tutorial in the database
+    // Save User in the database
     User.create(new_user)
-        .then(data => {
+        .then(res.redirect('/register'))
+        .catch(err => {
+            res.status(500).send({
+                message:
+                    err.message || "Some error occurred."
+            });
+        })
+}
+
+exports.findOne = (req, res) => {
+    User.findOne({
+        where: {
+            username: req.body.username
+        }
+    }).then(data => {
+        if(data){
             res.send(data);
+        } else {
+            res.status(404).send({
+                message: "Cannot find user with that username."
+            })
+        }
     })
     .catch(err => {
         res.status(500).send({
-            message:
-                err.message || "Some error occurred."
-        });
-    });
+            message: "Error retrieving user with that username."
+        })
+    })
 }

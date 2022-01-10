@@ -4,9 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const session = require('express-session');
-const hash = require('pbkdf2-password')();
 const db = require("./models/index");
-
 
 var indexRouter = require('./routes/index');
 var registerRouter = require('./routes/register');

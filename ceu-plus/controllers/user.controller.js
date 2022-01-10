@@ -1,6 +1,9 @@
 const db = require("../models");
 const User = db.users;
+const bcrypt = require("bcrypt");
 const Op = db.Sequelize.Op;
+
+const saltRounds = 10;
 
 // Create and Save a new Tutorial
 exports.create = (req, res) => {
@@ -20,7 +23,7 @@ exports.create = (req, res) => {
         username: req.body.username,
         grado: req.body.grado,
         email: req.body.email,
-        password: req.body.psw
+        password: bcrypt.hashSync(req.body.psw, saltRounds)
     };
 
     // Save Tutorial in the database

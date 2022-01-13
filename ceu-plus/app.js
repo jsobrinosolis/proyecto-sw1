@@ -49,10 +49,10 @@ app.use('/register', registerRouter);
 app.use('/profile', restrict, profileRouter);
 app.use('/users', usersRouter);
 app.use('/cafeteria', cafeteriaRouter);
-app.use('/deportes' , deportesRouter);
+app.use('/deportes', deportesRouter);
 app.use('/actualidad', actualidadRouter);
-app.use('/chat', chatRouter);
-app.use('/quejas', quejasRouter);
+app.use('/chat', restrict, chatRouter);
+app.use('/quejas', restrict, quejasRouter);
 app.get('/logout', function (req, res) {
   req.session.destroy(function () {
     res.redirect('/');

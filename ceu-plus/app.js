@@ -15,6 +15,7 @@ var actualidadRouter = require('./routes/actualidad');
 var deportesRouter = require('./routes/deportes');
 var chatRouter = require('./routes/chat');
 var quejasRouter = require('./routes/quejas');
+var fiestasRouter = require('./routes/fiestas');
 
 var app = express();
 
@@ -53,6 +54,7 @@ app.use('/deportes', deportesRouter);
 app.use('/actualidad', actualidadRouter);
 app.use('/chat', restrict, chatRouter);
 app.use('/quejas', restrict, quejasRouter);
+app.use('/fiestas', fiestasRouter);
 app.get('/logout', function (req, res) {
   req.session.destroy(function () {
     res.redirect('/');

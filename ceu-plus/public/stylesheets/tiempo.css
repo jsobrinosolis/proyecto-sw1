@@ -1,0 +1,31 @@
+body{
+    font-family: 'Helvetica';
+    font-size: 16px;
+}
+.tabla2{
+    margin-top: 2em;
+}
+
+.tabla2 th, .tabla2 td{
+    text-align: center;
+    padding: .2em .5em;
+    border: 1px solid black;
+}
+
+.tabla2 caption{
+    text-align: left;
+    margin-bottom: 5px;
+    font-variant: small-caps;
+    font-size: 20px;
+    letter-spacing: 5px;
+}
+
+.tabla2 td{
+    text-align: left;
+    font-size: .8em;
+    padding-bottom: 1em;
+    padding-right: 3em;
+}
+.imagen{
+    margin-left: 30px;
+}

@@ -9,11 +9,11 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res){
-    username = req.body.username;
     password = req.body.password;
     console.log(password);
-    userTmp = users.findUser;
-    console.log(userTmp.password);
+    userTmp = users.findUser(req, res);
+    console.log(userTmp);
+
     if(bcrypt.compareSync(password, userTmp.password)){
         console.log(userTmp);
             req.session.user = userTmp;

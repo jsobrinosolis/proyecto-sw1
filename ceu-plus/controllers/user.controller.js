@@ -37,10 +37,14 @@ exports.create = (req, res) => {
         })
 }
 
-exports.findUser = (req, res) => {
-    User.findAll({
-        where: {
-            username: req.body.username
-        }
-    })
+exports.findUser = async (req, res) => {
+    var query = User.findAll({
+                    raw: true,
+                    where: {
+                        username: req.body.username
+                    }
+                }).then(val => {
+                    //res.send(val);
+                    console.log(val);
+                })
 }

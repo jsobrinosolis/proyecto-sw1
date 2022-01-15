@@ -60,3 +60,33 @@ h1 {
     background-color: #fff;
     color: tomato;
 }
+
+.verquejas {
+    width: 1310px;
+    height: auto;
+    vertical-align: middle;
+    background: #eee;
+    box-shadow: 0 8px 8px -4px grey;
+    margin-left: 30px;
+    margin-top: 30px;
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 20px;
+
+}
+
+h3 {
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 25px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    color: darkslategray;
+    font-weight: 700;
+    text-decoration: none;
+    font-style: bold;
+    font-variant: small-caps;
+    text-transform: uppercase;
+    text-align: center;
+}

@@ -7,14 +7,22 @@
     <h1>CEU QUEJAS</h1>
     </br>
     <form method="post" class="contact-form" id="contactForm">
-        <input type="text" name="name" id="name" placeholder="Nombre" required>
+        <input type="text" name="title" id="title" placeholder="Título Queja" required>
+        <input type="text" name="nombre" id="name" placeholder="Nombre" required>
         <input type="email" name="email" id="email" placeholder="E-mail" required>
-        <textarea name="message" id="message" cols="30" rows="10" placeholder="Mensaje" required></textarea>
+        <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Mensaje" required></textarea>
         <button type="submit">Enviar</button>
         </br>
         </br>
         <p>Para acceder al chat porfavor haz click <a href="#" onClick="window.open('chat','Chat','resizable,height=750,width=400'); return false;">aquí</a></p>
     </form>
+    <br>
+    <div class="verquejas">
+        <h3>Titulo queja</h3>
+        <p class="description"> <b>Nombre: </b> </p>
+        <p class="description"> <b>Correo: </b> </p>
+        <p class="description"> <b>Mensaje: </b> </p>
+    </div>
 </body>
 </html>
 

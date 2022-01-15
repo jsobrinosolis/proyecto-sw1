@@ -53,7 +53,7 @@ app.use('/cafeteria', cafeteriaRouter);
 app.use('/deportes', deportesRouter);
 app.use('/actualidad', actualidadRouter);
 app.use('/chat', restrict, chatRouter);
-app.use('/quejas', restrict, quejasRouter);
+app.use('/quejas', quejasRouter);
 app.use('/fiestas', fiestasRouter);
 app.get('/logout', function (req, res) {
   req.session.destroy(function () {

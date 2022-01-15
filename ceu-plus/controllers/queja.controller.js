@@ -1,14 +1,12 @@
 const db = require("../models");
 const Queja = db.quejas;
-const bcrypt = require("bcrypt");
 const Op = db.Sequelize.Op;
 
-const saltRounds = 10;
 
 // Create and Save a new Queja
 exports.create = (req, res) => {
     // Validate request
-    if (!req.body.firstName) {
+    if (!req.body.title) {
         res.status(400).send({
             message: "Content can not be empty!"
         });

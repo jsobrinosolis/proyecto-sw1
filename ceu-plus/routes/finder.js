@@ -1,13 +1,13 @@
 var express = require('express');
 var router = express.Router();
 const db = require("../models");
-const objetos = require("../controllers/objeto.controller");
-const Objeto = db.objetos;
+const finder = require("../controllers/finder.controller");
+const Finder = db.finder;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('objetos', { title: 'CEU-Objetos'});
+    res.render('finder', { title: 'CEU-Finder'});
 });
-router.post('/', objetos.create);
+router.post('/', finder.create);
 
 module.exports = router;

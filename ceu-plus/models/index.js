@@ -8,5 +8,6 @@ db.sequelize = sequelize;
 
 db.users = require("./user")(sequelize, Sequelize);
 db.quejas = require("./queja")(sequelize, Sequelize);
+db.objetos = require("./objeto")(sequelize, Sequelize);
 
 module.exports = db;

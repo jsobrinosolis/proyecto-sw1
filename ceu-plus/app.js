@@ -17,6 +17,7 @@ var chatRouter = require('./routes/chat');
 var quejasRouter = require('./routes/quejas');
 var fiestasRouter = require('./routes/fiestas');
 var tiempoRouter = require('./routes/tiempo');
+var objetosRouter = require('./routes/objetos')
 
 var app = express();
 
@@ -57,6 +58,7 @@ app.use('/chat', restrict, chatRouter);
 app.use('/quejas', quejasRouter);
 app.use('/tiempo', tiempoRouter);
 app.use('/fiestas', fiestasRouter);
+app.use('/objetos', objetosRouter);
 app.get('/logout', function (req, res) {
   req.session.destroy(function () {
     res.redirect('/');

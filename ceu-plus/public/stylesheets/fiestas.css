@@ -4,47 +4,47 @@
 }
 .imgarriba{
     border: 1px solid black;
-    width: 150px;
+    width: 200px;
     height: 200px;
-    margin-left: 25%;
+    margin-left: 20%;
     margin-top:40px;
 }
 .imgcentro1{
     border: 1px solid black;
-    width: 150px;
+    width: 200px;
     height: 200px;
-    margin-left: 25%;
+    margin-left: 20%;
 }
 .textoarriba{
     border: 1px solid black;
-    width: 500px;
+    width: 550px;
     height: 200px;
     margin-top:40px;
 }
 .textocentro1{
     border: 1px solid black;
-    width: 500px;
+    width: 550px;
     height: 200px;
 }
 .textocentro2{
     border: 1px solid black;
-    width: 500px;
+    width: 550px;
     height: 200px;
 }
 .imgcentro2{
     border: 1px solid black;
-    width: 150px;
+    width: 200px;
     height: 200px;
-    margin-left: 25%;
+    margin-left: 20%;
 }
 .textoabajo{
     border: 1px solid black;
-    width: 500px;
+    width: 550px;
     height: 200px;
 }
 .imgabajo{
     border: 1px solid black;
-    width: 150px;
+    width: 200px;
     height: 200px;
-    margin-left: 25%;
+    margin-left: 20%;
 }

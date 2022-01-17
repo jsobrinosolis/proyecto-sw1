@@ -1,13 +1,17 @@
 var express = require('express');
 var router = express.Router();
 const db = require("../models");
-const objetos = require("../controllers/objeto.controller");
+const objeto = require("../controllers/objeto.controller");
 const Objeto = db.objetos;
 
-/* GET home page. */
+
 router.get('/', function(req, res, next) {
-    res.render('objetos', { title: 'CEU-Objetos'});
+    Objeto.findAll({raw: true}).then(function (resultado2) {
+        console.log(resultado2);
+        res.render('objetos', { title: 'CEU-OBJETO', objeto: resultado2});
+    })
 });
-router.post('/', objetos.create);
+
+router.post('/', objeto.create);
 
 module.exports = router;

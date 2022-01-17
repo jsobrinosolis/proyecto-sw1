@@ -4,15 +4,21 @@
     <body>
         <%- include('menu-nav')%>
         </br></br></br>
-        <h1>CEU Objetos</h1>
+        <h1>CEU Finder</h1>
         </br>
         <form method="post" class="contact-form" id="contactForm">
-            <input type="text" name="title" id="title" placeholder="Título Queja" required>
+            <input type="text" name="title" id="title" placeholder="¿A quien buscas?" required>
             <input type="text" name="descripcion" id="descripcion" placeholder="Descripcion" required>
             <button type="submit">Enviar</button>
             </br>
             </br>
         </form>
         <br>
+        <% finder.forEach(function (data){ %>
+            <div class="verquejas">
+                <h3><%= data.title %></h3>
+                <p class="description"> <b>Descripción: </b> <%= data.descripcion %> </p>
+            </div>
+        <% }) %>
     </body>
 </html>

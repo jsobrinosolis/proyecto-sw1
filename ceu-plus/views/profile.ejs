@@ -1,4 +1,3 @@
-<%- include('menu-nav')%>
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,12 +5,13 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
+  <%- include('menu-nav')%>
       <div id="boxperfil">
         <div class ="imagenPerfil">
           <img src="/images/perfil.jpg" />
         </div>
         <h1> <br>¡Bienvenido, <b><%= nombre %>! </b></h1>
-        <h1><br>Tu tipo de cuenta: <%= tipo %></h1>
+        <h3><br>Tu tipo de cuenta es: <%= tipo %></h3>
         <br>
     </div>
     </p>

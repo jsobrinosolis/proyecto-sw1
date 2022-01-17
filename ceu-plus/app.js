@@ -56,11 +56,11 @@ app.use('/cafeteria', cafeteriaRouter);
 app.use('/deportes', deportesRouter);
 app.use('/actualidad', actualidadRouter);
 app.use('/chat', restrict, chatRouter);
-app.use('/quejas', quejasRouter);
+app.use('/quejas', restrict,quejasRouter);
 app.use('/tiempo', tiempoRouter);
-app.use('/fiestas', fiestasRouter);
-app.use('/objetos', objetosRouter);
-app.use('/finder', finderRouter);
+app.use('/fiestas', restrict, fiestasRouter);
+app.use('/objetos', restrict, objetosRouter);
+app.use('/finder', restrict, finderRouter);
 app.get('/logout', function (req, res) {
   req.session.destroy(function () {
     res.redirect('/');

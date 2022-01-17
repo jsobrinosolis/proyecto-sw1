@@ -8,17 +8,14 @@ router.get('/', function(req, res, next) {
     res.render('index', { title: 'Log In', user: req.session.user });
 });
 
-router.post('/', function(req, res){
+router.post('/', async function(req, res){
     password = req.body.password;
-    console.log(password);
-    userTmp = users.findUser(req, res);
-    console.log(userTmp);
+    userTmp = await users.findUser(req, res);
 
-    if(bcrypt.compareSync(password, userTmp.password)){
-        console.log(userTmp);
-            req.session.user = userTmp;
-            req.session.success = 'Autenticado con éxito';
-            res.redirect('/profile');
+    if(bcrypt.compareSync(password, userTmp[0].dataValues.password)){
+        req.session.user = userTmp[0].dataValues;
+        req.session.success = 'Autenticado con éxito';
+        res.redirect('/profile');
     } else {
         req.session.error = 'Usuario o contraseña incorrectos';
         res.redirect('back');

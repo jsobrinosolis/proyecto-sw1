@@ -1,0 +1,18 @@
+.column { float: left;}
+.side{ width: 50%;}
+.left{ width: 50%;}
+
+.verfinder {
+    width: auto;
+    height: auto;
+    vertical-align: middle;
+    background: #eee;
+    box-shadow: 0 8px 8px -4px grey;
+    margin-left: 30px;
+    margin-top: 30px;
+    position: relative;
+    margin: 20px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 20px;
+
+}

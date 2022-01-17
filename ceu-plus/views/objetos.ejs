@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html>
-<%- include('header')%>
-<body>
-<%- include('menu-nav')%>
-</br></br></br>
-<h1>CEU Objetos</h1>
-</br>
-<form method="post" class="contact-form" id="contactForm">
-    <input type="text" name="title" id="title" placeholder="Objeto perdido" required>
-    <input type="text" name="descripcion" id="descripcion" placeholder="Descripcion" required>
-    <input type="email" name="email" id="email" placeholder="E-mail" required>
-    <button type="submit">Enviar</button>
-    </br>
-    </br>
-</form>
-<br>
-<% objeto.forEach(function (data){ %>
-    <div class="verquejas">
-        <h3><%= data.title %></h3>
-        <p class="description"> <b>Descripción: </b> <%= data.descripcion %> </p>
-        <p class="description"> <b>Correo de contacto: </b> <%= data.email %> </p>
-    </div>
-<% }) %>
-</body>
+    <%- include('header')%>
+    <body>
+    <%- include('menu-nav')%>
+        </br></br></br>
+        <br>
+        <br>
+        <div class="column side">
+            <% objeto.forEach(function (data){ %>
+                <div class="verfinder">
+                    <h3><%= data.title %></h3>
+                    <p class="description"> <b>Descripción: </b> <%= data.descripcion %> </p>
+                    <p class="description"> <b>Correo de contacto: </b> <%= data.email %> </p>
+                </div>
+            <% }) %>
+            </div>
+        <div class="column left">
+            <h1>CEU Objetos</h1>
+            </br>
+            <form method="post" class="contact-form" id="contactForm">
+                <input type="text" name="title" id="title" placeholder="Objeto perdido" required>
+                <input type="text" name="descripcion" id="descripcion" placeholder="Descripcion" required>
+                <input type="email" name="email" id="email" placeholder="E-mail" required>
+                <button type="submit">Enviar</button>
+                </br>
+                </br>
+            </form>
+        </div>
+    </body>
 </html>

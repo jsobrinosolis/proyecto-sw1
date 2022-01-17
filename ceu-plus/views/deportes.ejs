@@ -21,3 +21,19 @@
     <div class="column abajocentro21">Apúntate a la liga interna de <strong>fútbol sala</strong>. Pincha <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=7w4zNL4x0UySXqeQrHItME46oz57HLhNh8NK9Vwe2U5UMk1UUVkwVlBUM0NPTERMTFA1MEhQV0hERC4u"> aquí</a> para registrarte.</div>
     <div class="column abajodcha1">El CEU organiza viaje de ski.<br> El 18 de Enero, después de los exámenes partiremos hacia Andorra para iniciar el viaje de ski de 2022. </div>
 </div>
+
+<a href="/form_deportes"> Subir noticias </a>
+<div class="verdeportes">
+    <% sport.forEach(function (data){ %>
+        <div class="top">
+            <div class="verquejas">
+                    <h3>Titulo: <%= data.title %></h3>
+                    <p class="description"> <b>Noticia: </b> <%= data.descripcion %> </p>
+            </div>
+        </div>
+    <% }) %>
+</div>
+
+</body>
+
+</html>

@@ -19,6 +19,7 @@ var fiestasRouter = require('./routes/fiestas');
 var tiempoRouter = require('./routes/tiempo');
 var objetosRouter = require('./routes/objetos');
 var finderRouter = require('./routes/finder');
+var deportesRouter2 = require('./routes/form_deportes');
 
 var app = express();
 
@@ -61,6 +62,7 @@ app.use('/tiempo', tiempoRouter);
 app.use('/fiestas', restrict, fiestasRouter);
 app.use('/objetos', restrict, objetosRouter);
 app.use('/finder', restrict, finderRouter);
+app.use('/form_deportes', restrictAdmin, deportesRouter2);
 app.get('/logout', function (req, res) {
   req.session.destroy(function () {
     res.redirect('/');

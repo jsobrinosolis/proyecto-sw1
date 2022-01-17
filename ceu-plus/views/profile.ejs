@@ -14,6 +14,29 @@
         <h3><br>Tu tipo de cuenta es: <%= tipo %></h3>
         <br>
     </div>
-    </p>
+  <button id="boton-users" type="button" formmethod="post" class="btn btn-info" onclick="mostrar()">Mostrar usuarios registrados</button>
+  <% if (metodo == "POST"){ %>
+    <% lista.forEach(function (data){ %>
+      <div id="userlist" class="verquejas" >
+        <p class="description"> <b>Nombre: </b> <%= data.firstName %> </p>
+        <p class="description"> <b>Apellido: </b> <%= data.lastName %> </p>
+        <p class="description"> <b>Username: </b> <%= data.username %> </p>
+        <p class="description"> <b>Correo: </b> <%= data.email %> </p>
+        <p class="description"> <b>Grado: </b> <%= data.grado %> </p>
+      </div>
+    <% }) %>
+  <% } %>
   </body>
+  <script type="text/javascript">
+    const button = document.getElementById('boton-users');
+
+    button.addEventListener('click', function mostrar() {
+      var x = document.getElementById('userlist');
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    })
+  </script>
 </html>

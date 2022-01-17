@@ -107,4 +107,13 @@ function restrict(req, res, next){
   }
 }
 
+function restrictAdmin(req, res, next){
+  if(req.session.user.isAdmin){
+    next();
+  } else{
+    req.session.error = 'Acceso denegado';
+    res.redirect('/deportes');
+  }
+}
+
 module.exports = app;

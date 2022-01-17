@@ -60,6 +60,10 @@ a {
   text-align: center;
 }
 
+#userlist {
+  display: none;
+}
+
 h2 {
   font-size: 20px;
 

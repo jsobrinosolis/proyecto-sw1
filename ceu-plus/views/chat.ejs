@@ -15,34 +15,6 @@
 </form>
 </body>
 <script type="text/javascript" src="/socket.io/socket.io.js"></script>
-<script type="text/javascript">
-    const socket = io();
-    const form = document.getElementById("form");
-    const input = document.getElementById("input");
-    const list = document.getElementById("messages");
-
-    form.addEventListener('submit', function(e){
-        e.preventDefault();
-        if(input.value){
-            socket.emit('chat message', input.value);
-            input.value = "";
-        }
-    });
-
-    socket.on('chat message', function(msg){
-        const item = document.createElement('li');
-        item.textContent = msg;
-        list.appendChild(item);
-    });
-
-    socket.on('is_online', function(username) {
-        const item = document.createElement('li');
-        item.textContent = username;
-        list.appendChild(item);
-    });
-
-    var username = prompt('Dime tu nombre, por favor');
-    socket.emit('username', username);
-</script>
+<script src="/javascripts/chat.js"></script>
 </html>
 

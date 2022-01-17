@@ -17,12 +17,14 @@
         <p>Para acceder al chat porfavor haz click <a href="#" onClick="window.open('chat','Chat','resizable,height=750,width=400'); return false;">aquí</a></p>
     </form>
     <br>
+    <% queja.forEach(function (data){ %>
     <div class="verquejas">
-        <h3>Titulo queja</h3>
-        <p class="description"> <b>Nombre: </b> </p>
-        <p class="description"> <b>Correo: </b> </p>
-        <p class="description"> <b>Mensaje: </b> </p>
+        <h3><%= data.title %></h3>
+        <p class="description"> <b>Nombre: </b> <%= data.firstName %> </p>
+        <p class="description"> <b>Correo: </b> <%= data.email %> </p>
+        <p class="description"> <b>Mensaje: </b> <%= data.mensaje %> </p>
     </div>
+    <% }) %>
 </body>
 </html>
 
